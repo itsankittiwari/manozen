@@ -99,8 +99,9 @@ export default function Services() {
             Our Services
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive healthcare solutions designed to improve efficiency,
-            accuracy, and revenue.
+            Transform your healthcare operations with smart solutions that boost 
+            efficiency, ensure accuracy, and maximize revenue—powering growth 
+            and better patient outcomes.
           </p>
         </div>
       </section>
