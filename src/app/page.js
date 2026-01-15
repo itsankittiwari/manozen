@@ -1,65 +1,256 @@
-import Image from "next/image";
+import {
+  FileText,
+  Brain,
+  Database,
+  TrendingUp,
+  Shield,
+  DollarSign,
+  Clock,
+} from "lucide-react";
+import Link from "next/link";
+import ServiceCard from "@/components/ServiceCard";
+
 
 export default function Home() {
+  const stats = [
+    { number: "110,000+", label: "Records Processed" },
+    { number: "10+", label: "Years Experience" },
+    { number: "98%", label: "Clean Claim Rate" },
+    { number: "99%", label: "Annotation Accuracy" },
+  ];
+
+  const features = [
+    {
+      icon: Shield,
+      title: "HIPAA Compliant",
+      description:
+        "Full compliance with healthcare data security standards and regulations.",
+    },
+    {
+      icon: Brain,
+      title: "AI + Certified Coders",
+      description:
+        "Combining advanced AI technology with expert certified medical coders.",
+    },
+    {
+      icon: DollarSign,
+      title: "50% Cost Reduction",
+      description:
+        "Significantly reduce operational costs while maintaining quality.",
+    },
+    {
+      icon: Clock,
+      title: "Faster Reimbursements",
+      description:
+        "Accelerate your revenue cycle with accurate and timely coding.",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
+    <div className="bg-white">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            Delivering High-Quality Medical Coding & Labeled Data for{" "}
+            <span className="text-blue-600">Smarter Healthcare</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Transform your healthcare operations with precision medical coding,
+            advanced annotation, and revenue cycle management solutions.
           </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg"
+            >
+              Register for Free Demo
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* Stats */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+                {stat.number}
+              </div>
+              <div className="text-gray-600 font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Manozen Solution?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Cutting-edge technology combined with healthcare expertise.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+                >
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="text-blue-600" size={24} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Services */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Core Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comprehensive healthcare solutions tailored to your needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: FileText,
+                title: "Medical Coding & Billing",
+                text: "Accurate ICD-10, CPT, and HCPCS coding to maximize reimbursements.",
+              },
+              {
+                icon: Brain,
+                title: "Medical Annotation",
+                text: "Expert annotation of medical data for AI and research.",
+              },
+              {
+                icon: Database,
+                title: "AI Healthcare Data Labeling",
+                text: "High-quality labeled datasets for healthcare ML models.",
+              },
+              {
+                icon: TrendingUp,
+                title: "AR & Denial Management",
+                text: "Proactive revenue cycle and denial prevention strategies.",
+              },
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100"
+                >
+                  <Icon className="text-blue-600 mb-4" size={40} />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {item.text}
+                  </p>
+                  <Link
+                    href="/services"
+                    className="text-blue-600 font-semibold hover:text-blue-700"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA */}
+      <section className="py-16 bg-blue-600 text-white text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Transform Your Healthcare Operations?
+          </h2>
+          <p className="text-xl mb-8 text-blue-100">
+            Get started with a free demo today.
+          </p>
+          <Link
+            href="/contact"
+            className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            Schedule a Free Demo
+          </Link>
+        </div>
+      </section>
+      {/* Services Cards Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Advanced Healthcare Solutions
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Scalable, secure, and technology-driven services designed for modern healthcare.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <ServiceCard
+              icon={FileText}
+              title="Medical Coding & Billing"
+              description="Accurate ICD-10, CPT, and HCPCS coding to optimize reimbursements."
+              features={[
+                "Certified medical coders",
+                "HIPAA-compliant workflows",
+                "Reduced claim denials",
+                "Faster reimbursements",
+              ]}
+              gradient="from-blue-500 to-indigo-600"
+              bgGradient="from-blue-100 to-indigo-100"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            <ServiceCard
+              icon={Brain}
+              title="Medical Data Annotation"
+              description="High-quality human-labeled medical data for AI and ML applications."
+              features={[
+                "Clinically trained annotators",
+                "99% annotation accuracy",
+                "Scalable datasets",
+                "AI-ready outputs",
+              ]}
+              gradient="from-purple-500 to-pink-600"
+              bgGradient="from-purple-100 to-pink-100"
+            />
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
