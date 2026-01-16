@@ -5,6 +5,7 @@ import {
   TrendingUp,
   CheckCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Services() {
   const services = [
@@ -201,9 +202,9 @@ export default function Services() {
             Contact us today to learn how our services can transform your
             healthcare operations.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg">
+          <Link href="/contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg">
             Request a Consultation
-          </button>
+          </Link>
         </div>
       </section>
     </div>

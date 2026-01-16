@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-// import { supabase } from "@/lib/supabase";
+import toast from "react-hot-toast";
+
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ export default function Contact() {
     email: "",
     phone: "",
     organization: "",
-    service_interest: "",
+    service: "",
     message: "",
   });
 
@@ -23,20 +24,18 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      const { error } = await supabase
-        .from("contact_submissions")
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone || null,
-            organization: formData.organization || null,
-            service_interest: formData.service_interest || null,
-            message: formData.message,
-          },
-        ]);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      if (error) throw error;
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+      toast.success("Thank you! Your response has been submitted 🎉");
 
       setSubmitStatus("success");
       setFormData({
@@ -44,16 +43,18 @@ export default function Contact() {
         email: "",
         phone: "",
         organization: "",
-        service_interest: "",
+        service: "",
         message: "",
       });
-    } catch (err) {
-      console.error("Error submitting form:", err);
+    } catch (error) {
+      console.error("Form submit error:", error);
+      toast.error("Something went wrong. Please try again ❌");
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   const handleChange = (e) => {
     setFormData({
@@ -71,10 +72,10 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-xl text-gray-600">
-            Ready to transform your healthcare operations? 
-            Partner with us today and unlock smarter workflows, 
-            faster reimbursements, and technology-driven solutions 
-            designed to elevate your practice’s performance.          
+            Ready to transform your healthcare operations?
+            Partner with us today and unlock smarter workflows,
+            faster reimbursements, and technology-driven solutions
+            designed to elevate your practice’s performance.
           </p>
         </div>
       </section>
@@ -92,15 +93,15 @@ export default function Contact() {
             </p>
 
             <div className="space-y-6">
-              <Info icon={Mail} title="Email" lines={["info@manozen.com", "support@manozen.com"]} />
-              <Info icon={Phone} title="Phone" lines={["+1 (555) 123-4567", "Mon-Fri, 9am-6pm EST"]} />
+              <Info icon={Mail} title="Email" lines={["info@manozen.com"]} />
+              <Info icon={Phone} title="Phone" lines={["+91 8178324532", "Mon-Fri, 9am-6pm EST"]} />
               <Info
                 icon={MapPin}
                 title="Office"
                 lines={[
-                  "123 Healthcare Avenue",
-                  "Medical District, Suite 400",
-                  "New York, NY 10001",
+                  "N-103 Sector 25",
+                  "Jalvayu Vihar, Noida",
+                  "UP, India - 201301",
                 ]}
               />
             </div>
@@ -118,8 +119,8 @@ export default function Contact() {
                 Service of Interest
               </label>
               <select
-                name="service_interest"
-                value={formData.service_interest}
+                name="service"
+                value={formData.service}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg"
               >
@@ -129,17 +130,19 @@ export default function Contact() {
                 <option value="data_labeling">AI Healthcare Data Labeling</option>
                 <option value="ar_denial">AR & Denial Management</option>
                 <option value="general">General Inquiry</option>
+                <option value="other">Request a Schedule Demo</option>
+                <option value="other">Request a Consultation</option>
               </select>
             </div>
 
             <Textarea label="Message *" name="message" value={formData.message} onChange={handleChange} required />
 
-            {submitStatus === "success" && (
+            {/* {submitStatus === "success" && (
               <Alert type="success" text="Thank you! Your message has been sent." />
             )}
             {submitStatus === "error" && (
               <Alert type="error" text="Something went wrong. Please try again." />
-            )}
+            )} */}
 
             <button
               type="submit"
