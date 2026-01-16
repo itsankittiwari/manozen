@@ -1,11 +1,12 @@
+export const runtime = "nodejs";
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { getSupabaseClient } from "@/lib/supabase";
 import { sendContactEmail } from "@/lib/mailer";
 
 export async function POST(request){
     try {
         const data = await request.json();
-
+        const supabase = getSupabaseClient(); 
         const {
             name,email,phone,organization,service,message
         } = data;
