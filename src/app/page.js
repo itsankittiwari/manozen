@@ -53,7 +53,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Delivering High-Quality Medical Coding & Labeled Data for{" "}
-            <span className="text-blue-600">Smarter Healthcare</span>
+            <span className="text-red-500">Smarter Healthcare</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -64,13 +64,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg"
+              className="bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-600 transition-all shadow-lg"
             >
               Register for Free Demo
             </Link>
             <Link
               href="/contact"
-              className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all"
+              className="bg-white text-red-500 border-2 border-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition-all"
             >
               Contact Us
             </Link>
@@ -83,7 +83,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-red-500 mb-2">
                 {stat.number}
               </div>
               <div className="text-gray-600 font-medium">
@@ -114,8 +114,8 @@ export default function Home() {
                   key={index}
                   className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="text-blue-600" size={24} />
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="text-red-500" size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {feature.title}
@@ -169,9 +169,9 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-100"
+                  className="bg-gradient-to-br from-red-50 to-white p-8 rounded-xl border border-red-100"
                 >
-                  <Icon className="text-blue-600 mb-4" size={40} />
+                  <Icon className="text-red-500 mb-4" size={40} />
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {item.title}
                   </h3>
@@ -180,7 +180,7 @@ export default function Home() {
                   </p>
                   <Link
                     href="/services"
-                    className="text-blue-600 font-semibold hover:text-blue-700"
+                    className="text-red-500 font-semibold hover:text-red-700"
                   >
                     Learn More →
                   </Link>
@@ -192,17 +192,17 @@ export default function Home() {
       </section>
       
       {/* CTA */}
-      <section className="py-16 bg-blue-600 text-white text-center">
+      <section className="py-16 bg-red-500 text-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Healthcare Operations?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-red-100">
             Get started with a free demo today.
           </p>
           <Link
             href="/contact"
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg"
+            className="bg-white text-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition-all shadow-lg"
           >
             Schedule a Free Demo
           </Link>

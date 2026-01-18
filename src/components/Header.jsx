@@ -24,7 +24,7 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            className="text-xl font-bold text-red-500 hover:text-red-700 transition-colors"
           >
             Manozen Solution
           </Link>
@@ -37,8 +37,8 @@ export default function Header() {
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? "text-blue-600 border-b-2 border-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
+                    ? "text-red-600 border-b-2 border-red-600"
+                    : "text-gray-700 hover:text-red-600"
                 }`}
               >
                 {item.name}
@@ -47,7 +47,7 @@ export default function Header() {
 
             {/* <Link
               href="/contact"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
             >
               Get Started
             </Link> */}
@@ -57,7 +57,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-red-500"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -74,7 +74,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 text-sm font-medium ${
                   pathname === item.href
-                    ? "text-blue-600 bg-blue-50"
+                    ? "text-red-500 bg-red-50"
                     : "text-gray-700 hover:bg-gray-50"
                 }`}
               >

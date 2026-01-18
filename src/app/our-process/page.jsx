@@ -76,9 +76,9 @@ export default function OurProcess() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-br from-red-50 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-6">
             Our Process
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -102,11 +102,11 @@ export default function OurProcess() {
               <div key={index}>
                 <div className="flex flex-col md:flex-row gap-8 mb-16">
                   <div className="md:w-1/3 flex flex-col items-center md:items-start">
-                    <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                    <div className="w-20 h-20 bg-red-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
                       <Icon className="text-white" size={36} />
                     </div>
                     <div className="text-center md:text-left">
-                      <div className="text-blue-600 font-semibold mb-2">
+                      <div className="text-red-500 font-semibold mb-2">
                         Step {index + 1}
                       </div>
                       <h2 className="text-2xl font-bold text-gray-900">
@@ -126,7 +126,7 @@ export default function OurProcess() {
                       <ul className="grid sm:grid-cols-2 gap-3">
                         {step.details.map((detail, i) => (
                           <li key={i} className="flex items-start text-gray-700">
-                            <span className="text-blue-600 mr-2">•</span>
+                            <span className="text-red-500 mr-2">•</span>
                             {detail}
                           </li>
                         ))}
@@ -139,7 +139,7 @@ export default function OurProcess() {
                   <div className="flex justify-center mb-16">
                     <ArrowRight
                       size={32}
-                      className="text-blue-600 rotate-90 md:rotate-0"
+                      className="text-red-500 rotate-90 md:rotate-0"
                     />
                   </div>
                 )}
@@ -177,7 +177,7 @@ export default function OurProcess() {
               },
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-xl shadow-md">
-                <div className="text-3xl font-bold text-blue-600 mb-2">
+                <div className="text-3xl font-bold text-red-500 mb-2">
                   {item.title}
                 </div>
                 <p className="text-gray-600">{item.text}</p>
@@ -188,16 +188,16 @@ export default function OurProcess() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-blue-600 text-white text-center">
+      <section className="py-16 bg-red-500 text-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Experience Our Process Firsthand
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
+          <p className="text-xl mb-8 text-red-100">
             Schedule a demo to see how our workflow can benefit your organization.
           </p>
            <Link
-              href="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg">
+              href="/contact" className="bg-white text-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg">
             Schedule a Demo
           </Link>
         </div>

@@ -66,9 +66,9 @@ export default function Contact() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-br from-red-50 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-6">
             Contact Us
           </h1>
           <p className="text-xl text-gray-600">
@@ -85,7 +85,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
           {/* Info */}
           <div>
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">
+            <h2 className="text-3xl font-bold text-red-500 mb-6">
               Get in Touch
             </h2>
             <p className="text-lg text-gray-600 mb-8">
@@ -147,7 +147,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center"
+              className="w-full bg-red-500 text-white py-4 rounded-lg font-semibold flex items-center justify-center"
             >
               {isSubmitting ? "Sending..." : (<><Send size={18} className="mr-2" />Send Message</>)}
             </button>
@@ -163,8 +163,8 @@ export default function Contact() {
 function Info({ icon: Icon, title, lines }) {
   return (
     <div className="flex items-start">
-      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-        <Icon className="text-blue-600" size={24} />
+      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+        <Icon className="text-red-500" size={24} />
       </div>
       <div>
         <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>

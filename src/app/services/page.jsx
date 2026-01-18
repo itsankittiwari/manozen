@@ -6,11 +6,14 @@ import {
   CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+
 
 export default function Services() {
   const services = [
     {
       icon: FileText,
+      image: "/image/medical-coding.png",
       title: "Medical Coding & Billing",
       description:
         "Comprehensive medical coding services ensuring accuracy, compliance, and maximum reimbursement.",
@@ -31,19 +34,22 @@ export default function Services() {
     },
     {
       icon: Brain,
+      image: "/image/annotation_medical.png",
       title: "Medical Annotation",
       description:
         "Expert annotation of medical data for AI training, research, and clinical applications.",
       features: [
         "Clinical notes annotation",
         "Medical image labeling",
+        "Medical audio annotation",
+        "Medical video annotation",
         "ICD-10 code tagging",
         "CPT procedure identification",
         "Named entity recognition",
         "Relationship extraction",
       ],
       benefits: [
-        "99% annotation accuracy",
+        "95% annotation accuracy",
         "HIPAA-compliant processes",
         "Scalable solutions",
         "Quality-assured outputs",
@@ -51,6 +57,7 @@ export default function Services() {
     },
     {
       icon: Database,
+      image: "/image/ai-data-labeling.png",
       title: "AI Healthcare Data Labeling",
       description:
         "High-quality labeled datasets to power your healthcare AI and machine learning initiatives.",
@@ -71,6 +78,7 @@ export default function Services() {
     },
     {
       icon: TrendingUp,
+      image: "/image/ar-denial.png",
       title: "AR & Denial Management",
       description:
         "Proactive revenue cycle management to reduce denials and optimize cash flow.",
@@ -91,17 +99,18 @@ export default function Services() {
     },
   ];
 
+
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-br from-red-50 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-6">
             Our Services
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your healthcare operations with smart solutions that boost 
-            efficiency, ensure accuracy, and maximize revenue—powering growth 
+            Transform your healthcare operations with smart solutions that boost
+            efficiency, ensure accuracy, and maximize revenue—powering growth
             and better patient outcomes.
           </p>
         </div>
@@ -115,16 +124,15 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className={`flex flex-col ${
-                  index % 2 === 0
-                    ? "lg:flex-row"
-                    : "lg:flex-row-reverse"
-                } gap-8 items-center`}
+                className={`flex flex-col ${index % 2 === 0
+                  ? "lg:flex-row"
+                  : "lg:flex-row-reverse"
+                  } gap-8 items-center`}
               >
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <Icon className="text-blue-600" size={32} />
+                  <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                    <Icon size={200} className="text-red-500 opacity-20" />
                   </div>
 
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -145,7 +153,7 @@ export default function Services() {
                           <li key={i} className="flex items-start">
                             <CheckCircle
                               size={18}
-                              className="text-blue-600 mr-2 mt-0.5"
+                              className="text-red-500 mr-2 mt-0.5"
                             />
                             <span className="text-gray-700">
                               {feature}
@@ -179,10 +187,13 @@ export default function Services() {
 
                 {/* Visual */}
                 <div className="flex-1 w-full">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl min-h-[300px] flex items-center justify-center">
-                    <Icon
-                      size={200}
-                      className="text-blue-600 opacity-20"
+                  <div className="relative bg-gradient-to-br min-h-[300px] lg:min-h-[400px] overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-contain max-h-full rounded-2xl p-4"
+                      priority
                     />
                   </div>
                 </div>
@@ -202,7 +213,7 @@ export default function Services() {
             Contact us today to learn how our services can transform your
             healthcare operations.
           </p>
-          <Link href="/contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg">
+          <Link href="/contact" className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-all shadow-lg">
             Request a Consultation
           </Link>
         </div>

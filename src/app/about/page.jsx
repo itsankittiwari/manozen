@@ -38,10 +38,10 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+      <section className="bg-gradient-to-br from-red-50 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-6">
               About Manozen Solution
             </h1>
             <p className="text-xl text-gray-600">
@@ -85,9 +85,9 @@ export default function About() {
               {achievements.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl border border-blue-100 text-center"
+                  className="bg-gradient-to-br from-red-50 to-white p-6 rounded-xl border border-red-100 text-center"
                 >
-                  <div className="text-4xl font-bold text-blue-600 mb-2">
+                  <div className="text-4xl font-bold text-red-500 mb-2">
                     {item.number}
                   </div>
                   <div className="text-gray-600 font-medium">
@@ -107,7 +107,7 @@ export default function About() {
             <div className="order-2 lg:order-1">
               <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <div className="flex items-center mb-6">
-                  <Target className="text-blue-600 mr-4" size={40} />
+                  <Target className="text-red-500 mr-4" size={40} />
                   <h3 className="text-2xl font-bold text-gray-900">
                     Our Mission
                   </h3>
@@ -120,7 +120,7 @@ export default function About() {
 
               <div className="bg-white p-8 rounded-2xl shadow-lg mt-6">
                 <div className="flex items-center mb-6">
-                  <Eye className="text-blue-600 mr-4" size={40} />
+                  <Eye className="text-red-500 mr-4" size={40} />
                   <h3 className="text-2xl font-bold text-gray-900">
                     Our Vision
                   </h3>
@@ -164,8 +164,8 @@ export default function About() {
                   key={index}
                   className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow text-center"
                 >
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="text-blue-600" size={28} />
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="text-red-500" size={28} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {value.title}
@@ -179,12 +179,12 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-red-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Why Healthcare Organizations Choose Us
           </h2>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-red-100">
             Expertise, technology, and proven results.
           </p>
         </div>
