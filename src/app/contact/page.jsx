@@ -93,14 +93,13 @@ export default function Contact() {
             </p>
 
             <div className="space-y-6">
-              <Info icon={Mail} title="Email" lines={["info@manozen.com"]} />
+              <Info icon={Mail} title="Email" lines={["info@manozensolution.com"]} />
               <Info icon={Phone} title="Phone" lines={["+91 8178324532", "Mon-Fri, 9am-6pm EST"]} />
               <Info
                 icon={MapPin}
                 title="Office"
                 lines={[
-                  "N-103 Sector 25",
-                  "Jalvayu Vihar, Noida",
+                  "N-103 Sector 25, Noida",
                   "UP, India - 201301",
                 ]}
               />
@@ -128,6 +127,7 @@ export default function Contact() {
                 <option value="medical_coding">Medical Coding & Billing</option>
                 <option value="medical_annotation">Medical Annotation</option>
                 <option value="data_labeling">AI Healthcare Data Labeling</option>
+                <option value="training">Training</option>
                 <option value="ar_denial">AR & Denial Management</option>
                 <option value="general">General Inquiry</option>
                 <option value="other">Request a Schedule Demo</option>

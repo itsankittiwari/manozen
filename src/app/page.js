@@ -1,3 +1,4 @@
+"use client";
 import {
   FileText,
   Brain,
@@ -9,7 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
-
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const stats = [
@@ -45,15 +46,28 @@ export default function Home() {
         "Accelerate your revenue cycle with accurate and timely coding.",
     },
   ];
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    'image/medical-annotation1.png',
+    'image/annotation_image.png',
+    'image/annotation_medical.png',
+  ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-20">
+      {/* <section className="bg-gradient-to-br from-red-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Delivering High-Quality Medical Coding & Labeled Data for{" "}
-            <span className="text-red-500">Smarter Healthcare</span>
+            Smart RCM End-to-End Solutions and Scalable Data Annotation for Healthcare and{" "}
+            <span className="text-red-500">AI-Driven Businesses.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -74,6 +88,74 @@ export default function Home() {
             >
               Contact Us
             </Link>
+          </div>
+        </div>
+      </section> */}
+      <section className="min-h-screen bg-gradient-to-br from-blue-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Smart RCM End-to-End Solutions and Scalable Data Annotation for Healthcare and{" "}
+                <span className="text-red-500">AI-Driven Businesses.</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-600 mb-8">
+                Transform your healthcare operations with precision medical coding,
+                advanced annotation, and revenue cycle management solutions.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-600 transition-all shadow-lg">
+                  Register for Free Demo
+                </button>
+                <button className="bg-white text-red-500 border-2 border-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition-all">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+
+            <div className="relative h-[350px] lg:h-[400px] w-full rounded-2xl overflow-hidden flex items-center justify-center">
+
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 flex items-center justify-center
+                    transition-all duration-1000 ease-in-out
+                    ${index === currentImage
+                      ? "opacity-100 translate-x-0"
+                      : index < currentImage
+                        ? "opacity-0 -translate-x-full"
+                        : "opacity-0 translate-x-full"
+                    }
+                  `}
+                >
+                  <img
+                    src={image}
+                    alt={`Healthcare solution ${index + 1}`}
+                    className="w-[90%] h-[90%] object-contain"
+                  />
+                </div>
+              ))}
+
+              {/* DOT INDICATORS */}
+              <div className="absolute bottom-0 flex gap-2">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImage(index)}
+                    className={`h-3 rounded-full transition-all duration-300
+                      ${index === currentImage
+                        ? "bg-red-500 w-8"
+                        : "bg-gray-300 w-3 hover:bg-gray-400"
+                      }
+                    `}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -101,8 +183,8 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Choose Manozen Solution?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Cutting-edge technology combined with healthcare expertise.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-semibold">
+              Achieve up to 40% cost reduction compared to your current vendor—without compromising quality
             </p>
           </div>
 
@@ -190,7 +272,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA */}
       <section className="py-16 bg-red-500 text-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

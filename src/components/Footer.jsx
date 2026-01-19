@@ -47,15 +47,15 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-center space-x-2">
                 <Mail size={16} />
-                <span>info@manozen.com</span>
+                <span>info@manozensolution.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 8178324532</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin size={16} className="mt-1" />
-                <span>123 Healthcare Ave, Medical District</span>
+                <span>N-103 Sector 25, Noida</span>
               </li>
             </ul>
           </div>
