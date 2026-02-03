@@ -63,35 +63,7 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      {/* <section className="bg-gradient-to-br from-red-50 to-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Smart RCM End-to-End Solutions and Scalable Data Annotation for Healthcare and{" "}
-            <span className="text-red-500">AI-Driven Businesses.</span>
-          </h1>
-
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Transform your healthcare operations with precision medical coding,
-            advanced annotation, and revenue cycle management solutions.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-600 transition-all shadow-lg"
-            >
-              Register for Free Demo
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-white text-red-500 border-2 border-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition-all"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section> */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-50 to-white py-20">
+      <section className="min-h-screen bg-gradient-to-br from-red-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
@@ -161,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* Stats */}
-      <section className="py-16">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
