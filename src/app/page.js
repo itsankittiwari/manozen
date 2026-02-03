@@ -63,7 +63,7 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="min-h-screen bg-gradient-to-br from-red-50 to-white py-20">
+      <section className="min-h-screen bg-gradient-to-br from-red-50 to-white py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
