@@ -106,12 +106,12 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-600 transition-all shadow-lg">
+                <Link href="/contact" className="bg-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-600 transition-all shadow-lg">
                   Register for Free Demo
-                </button>
-                <button className="bg-white text-red-500 border-2 border-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition-all">
+                </Link>
+                <Link href="/contact" className="bg-white text-red-500 border-2 border-red-500 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-50 transition-all">
                   Contact Us
-                </button>
+                </Link>
               </div>
             </div>
 
