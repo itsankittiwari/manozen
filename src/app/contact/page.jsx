@@ -95,14 +95,14 @@ export default function Contact() {
             <div className="space-y-6">
               <Info icon={Mail} title="Email" lines={["info@manozensolution.com"]} />
               <Info icon={Phone} title="Phone" lines={["+91 8178324532", "Mon-Fri, 9am-6pm EST"]} />
-              <Info
+              {/* <Info
                 icon={MapPin}
                 title="Office"
                 lines={[
-                  "N-103 Sector 25, Noida",
+                  "N-103 ,Noida",
                   "UP, India - 201301",
                 ]}
-              />
+              /> */}
             </div>
           </div>
 

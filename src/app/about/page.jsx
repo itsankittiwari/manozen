@@ -31,7 +31,7 @@ export default function About() {
   const achievements = [
     { number: "10+", label: "Years of Experience" },
     { number: "110,000+", label: "Records Processed" },
-    { number: "50+", label: "Healthcare Clients" },
+    // { number: "50+", label: "Healthcare Clients" },
     { number: "98%", label: "Client Satisfaction" },
   ];
 

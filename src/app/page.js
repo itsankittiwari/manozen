@@ -17,7 +17,7 @@ export default function Home() {
     { number: "110,000+", label: "Records Processed" },
     { number: "10+", label: "Years Experience" },
     { number: "98%", label: "Clean Claim Rate" },
-    { number: "99%", label: "Annotation Accuracy" },
+    { number: "95%", label: "Annotation Accuracy" },
   ];
 
   const features = [
