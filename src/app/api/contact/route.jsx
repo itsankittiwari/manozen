@@ -1,12 +1,13 @@
-export const runtime = "nodejs";
 import { NextResponse } from "next/server";
-import { getSupabaseClient } from "@/lib/supabase";
+import { db } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { sendContactEmail } from "@/lib/mailer";
+
+export const runtime = "nodejs";
 
 export async function POST(request){
     try {
         const data = await request.json();
-        const supabase = getSupabaseClient(); 
         const {
             name,email,phone,organization,service,message
         } = data;
@@ -15,33 +16,29 @@ export async function POST(request){
             return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
         }
 
-        const { error } =await supabase.from("submission").insert([{
+        // Add document to Firestore "submissions" collection
+        const docRef = await addDoc(collection(db, "submissions"), {
             name,
             email,
             phone,
             organization,
             service,
             message,
-        }])
+            createdAt: serverTimestamp(),
+        });
 
-        if (error) {
-        console.error(error);
-        return NextResponse.json(
-            { error: "Database error" },
-            { status: 500 }
-        );
-        }
+        console.log("Document written with ID: ", docRef.id);
 
         await sendContactEmail(data);
 
         return NextResponse.json(
-            { success: true},
+            { success: true, id: docRef.id },
         );       
     }
     catch (error) {
-        console.error("API Error:", err);
+        console.error("Firestore Error:", error);
         return NextResponse.json(
-            { error: "Internal server error" },
+            { error: "Database error" },
             { status: 500 }
         );
     }
