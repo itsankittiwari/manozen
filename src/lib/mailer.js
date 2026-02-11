@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendContactEmail(data) {
   return resend.emails.send({
-    from: "Manozen Website <onboarding@resend.dev>",
+    from: "Manozen Website <contact@manozensolution.com>",
     to: [process.env.ADMIN_EMAIL],
     subject: "📩 New Contact Form Submission",
     html: `

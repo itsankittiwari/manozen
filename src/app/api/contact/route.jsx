@@ -29,7 +29,14 @@ export async function POST(request){
 
         console.log("Document written with ID: ", docRef.id);
 
-        await sendContactEmail(data);
+        // Send email notification
+        try {
+            await sendContactEmail(data);
+            console.log("Email sent successfully");
+        } catch (emailError) {
+            console.error("Email sending failed:", emailError);
+            // Continue even if email fails - document is already saved
+        }
 
         return NextResponse.json(
             { success: true, id: docRef.id },
