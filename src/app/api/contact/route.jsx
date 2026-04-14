@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { adminDb } from "@/lib/firebase-admin";
 import { sendContactEmail } from "@/lib/mailer";
+import { Timestamp } from "firebase-admin/firestore";
 
 export const runtime = "nodejs";
 
@@ -17,14 +17,14 @@ export async function POST(request){
         }
 
         // Add document to Firestore "submissions" collection
-        const docRef = await addDoc(collection(db, "submissions"), {
+        const docRef = await adminDb.collection("submissions").add({
             name,
             email,
             phone,
             organization,
             service,
             message,
-            createdAt: serverTimestamp(),
+            createdAt: Timestamp.now(),
         });
 
         console.log("Document written with ID: ", docRef.id);
