@@ -99,7 +99,7 @@ export default function Contact() {
                 icon={MapPin}
                 title="Office"
                 lines={[
-                  'N-103 ,Noida,Gautam Buddh Nagar',
+                  'Sec-25, Noida, Gautam Buddh Nagar',
                   'UP, India - 201301',
                 ]}
               />
